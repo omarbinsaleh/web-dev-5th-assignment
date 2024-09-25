@@ -16,15 +16,16 @@
    <script src="./script/main.js"></script>
 </head>
 
-<body class="">
+<body class="w-screen h-screen flex flex-col">
    <!-- header section -->
-   <header class=" shadow-md sticky top-0 left-0">
+   <header class=" shadow-md sticky top-0 left-0 bg-white">
       <section class="bg-[#F9F7F3]">
          <!-- nav bar -->
          <nav class="w-full max-w-[1140px] mx-auto p-3 flex items-center justify-between gap-2">
             <div class="hidden sm:block">
                <button id="nav-btn-blogs" class="btn btn-active m-0 border border-slate-400"
-                  data-button="btn-blogs">Blogs</button>
+                  data-button="btn-blogs">Blogs
+               </button>
             </div>
             <div>
                <div class="flex items-center gap-2">
@@ -45,31 +46,34 @@
       <div class="w-full max-w-[1140px] mx-auto p-4 flex items-center justify-center gap-5 bg-white">
          <!-- blogs button -->
          <div class="sm:hidden">
-            <button id="btn-blogs" class="btn btn-active m-0 btn-blogs border border-slate-400"
-               data-button="btn-blogs">Blogs</button>
+               <button id="btn-blogs" class="btn btn-active m-0 btn-blogs hover:bg-green-400 border border-slate-400"
+                  data-button="btn-blogs">Blogs
+               </button>
          </div>
          <!-- donation button -->
          <div class="">
-            <button id="btn-donation" class="btn btn-active m-0 border border-slate-400"
-               data-button="btn-donation">Donation</button>
+            <button id="btn-donation" class="btn btn-active m-0 bg-green-400 hover:bg-green-400 border border-slate-400"
+               data-button="btn-donation">Donation
+            </button>
          </div>
          <!-- history button -->
          <div class="">
-            <button id="btn-history" class="btn btn-active m-0 border border-slate-400"
-               data-button="btn-history">History</button>
+            <button id="btn-history" class="btn btn-active m-0 border hover:bg-green-400 border-slate-400"
+               data-button="btn-history">History
+            </button>
          </div>
       </div>
    </header>
 
    <!-- main section -->
-   <main class="pt-8">
-      <section class="w-full max-w-[1140px] p-3">
+   <main class="pt-8 flex-1">
+      <section id="info-container" class="w-full max-w-[1140px] p-3 mx-auto">
          <!-- donatin section -->
          <section id="donations-container" class="space-y-7">
             <!-- donation card 1 -->
             <div class="grid sm:grid-cols-2 gap-6 p-2 rounded-md shadow-lg border border-gray-300">
                <div>
-                  <img class="w-full h-full rounded-md" src="./assets/noakhali.png" alt="">
+                  <img class="w-full aspect-[3/2] rounded-md" src="./assets/noakhali.png" alt="">
                </div>
                <div class="space-y-1">
                   <!-- collected donations -->
@@ -90,7 +94,7 @@
                      positive impact on the lives of those in need.
                   </p>
                   <div class="bg-base-100 w-full shadow-lg py-3">
-                     <form class="">
+                     <form class="" data-index="0">
                         <div class="form-control">
                            <label class="label">
                               <span class="label-text">Your Donation</span>
@@ -99,7 +103,7 @@
                               class="donation-amount input input-bordered" required />
                         </div>
                         <div class="form-control mt-6">
-                           <button class="btn btn-active">Donate Now</button>
+                           <button class="btn btn-active hover:bg-green-300 focus:bg-green-400">Donate Now</button>
                         </div>
                      </form>
                   </div>
@@ -108,7 +112,7 @@
             <!-- donation card 2 -->
             <div class="grid sm:grid-cols-2 gap-6 p-2 rounded-md shadow-lg border border-gray-300">
                <div>
-                  <img class="w-full h-full rounded-md" src="./assets/feni.png" alt="">
+                  <img class="w-full aspect-[3/2] rounded-md" src="./assets/feni.png" alt="">
                </div>
                <div class="space-y-1">
                   <!-- collected donations -->
@@ -129,7 +133,7 @@
                      positive impact on the lives of those in need.
                   </p>
                   <div class="bg-base-100 w-full shadow-lg py-3">
-                     <form class="">
+                     <form class="" data-index="1">
                         <div class="form-control">
                            <label class="label">
                               <span class="label-text">Your Donation</span>
@@ -138,7 +142,7 @@
                               class="donation-amount input input-bordered" required />
                         </div>
                         <div class="form-control mt-6">
-                           <button class="btn btn-active">Donate Now</button>
+                           <button class="btn btn-active hover:bg-green-300 focus:bg-green-400">Donate Now</button>
                         </div>
                      </form>
                   </div>
@@ -147,7 +151,7 @@
             <!-- donation card 3 -->
             <div class="grid sm:grid-cols-2 gap-6 p-2 rounded-md shadow-lg border border-gray-300">
                <div>
-                  <img class="w-full h-full rounded-md" src="./assets/quota-protest.png" alt="">
+                  <img class="w-full aspect-[3/2] rounded-md" src="./assets/quota-protest.png" alt="">
                </div>
                <div class="space-y-1">
                   <!-- collected donations -->
@@ -168,7 +172,7 @@
                      positive impact on the lives of those in need.
                   </p>
                   <div class="bg-base-100 w-full shadow-lg py-3">
-                     <form class="">
+                     <form class="" data-index="2">
                         <div class="form-control">
                            <label class="label">
                               <span class="label-text">Your Donation</span>
@@ -177,7 +181,7 @@
                               class="donation-amount input input-bordered" required />
                         </div>
                         <div class="form-control mt-6">
-                           <button class="btn btn-active">Donate Now</button>
+                           <button class="btn btn-active hover:bg-green-300 focus:bg-green-400">Donate Now</button>
                         </div>
                      </form>
                   </div>
@@ -186,11 +190,14 @@
          </section>
 
          <!-- history section -->
-         <section id="history-container">
+         <section id="history-container" class="hidden space-y-5">
 
          </section>
       </section>
    </main>
+   <footer class="p-3 bg-[#F9F7F3] h-16">
+
+   </footer>
    <!-- utilities script files -->
    <script src="./script/utilities.js"></script>
 </body>

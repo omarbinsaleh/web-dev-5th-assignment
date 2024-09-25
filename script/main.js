@@ -1,19 +1,64 @@
-document.addEventListener("DOMContentLoaded", function() {
-   
+document.addEventListener("DOMContentLoaded", function () {
+   // get the main balance:
+   const balance = parseFloat(localStorage.getItem("balance")) || localStorage.setItem("balance", JSON.stringify(0));
+   const historyLog = JSON.parse(localStorage.getItem("history")) || localStorage.setItem("history", JSON.stringify([]))
+   console.log(historyLog);
+   const donationsArray = JSON.parse(localStorage.getItem("donations")) || localStorage.setItem("donations", JSON.stringify([0, 0, 0]))
+
+   if (historyLog.length <= 0) {
+      document.querySelector("#history-container").innerHTML = `
+         <div id='no-log' class="text-xl font-semibold text-slate-400 text-center">No History log recorded..</div>
+      `
+   }
+   else {
+      historyLog.forEach(log => {
+         createHistoryLog(log);
+      })
+   }
+
+   // load main Balance:
+   loadMainBalance(balance);
+
+   // load the donations:
+   loadDonations(donationsArray);
+
    // add "click" event handler to all the buttons:
    document.querySelectorAll("button").forEach(btn => {
-      btn.addEventListener("click", function() {
-         
+      btn.addEventListener("click", function () {
+
          // change the bg color
          resetButtonColor();
-         this.classList.add("bg-green-400");
+
+         // when the the blog button is clicked on:
+         if (this.dataset.button === "btn-blogs") {
+            this.classList.add("bg-green-400");
+            const root = window.origin;
+
+            window.open(`${origin}/pages/blogs.html`)
+         }
+
+         // when the the donation button is clicked on:
+         if (this.dataset.button === "btn-donation") {
+            this.classList.add("bg-green-400");
+
+            // show the donation section:
+            show("#donations-container");
+         }
+
+         // when the history button is clicked on:
+         if (this.dataset.button === "btn-history") {
+            this.classList.add("bg-green-400");
+
+            // show the history section:
+            show("#history-container");
+         }
       })
    });
 
    // add "submit" event handler to the donation form:
    const donationForm = document.querySelectorAll("form");
    donationForm.forEach(form => {
-      form.addEventListener("submit", function(event) {
+      form.addEventListener("submit", function (event) {
          // stop the default form submition:
          event.preventDefault();
 
@@ -36,21 +81,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
          // add the donation amount the total donation:
          const donationElement = event.currentTarget.parentElement.parentElement.querySelector(".total-donations");
-         const previousDonation =  parseFloat(donationElement.innerText);
+         const previousDonation = parseFloat(donationElement.innerText);
          const TotalDonation = previousDonation + donation;
          donationElement.innerText = TotalDonation;
+         const donaArry = [...JSON.parse(localStorage.getItem("donations"))];
+         donaArry[this.dataset.index] = TotalDonation;
+         localStorage.setItem("donations", JSON.stringify(donaArry));
 
          // update the main balance
          const newBalance = currentMainBalance - donation;
          document.querySelector("#main-balance").innerText = newBalance;
+         localStorage.setItem("balance", JSON.stringify(newBalance));
 
          // show the user a successfull message:
          alert(`You have donate ${donation} BDT successfully`)
+
+         // create a history log:
+         document.querySelector("#no-log").remove();
+         const title = event.currentTarget.parentElement.parentElement.querySelector("h1").innerText;
+         const time = new Date();
+         const log = { title, time, amount: donation }
+         createHistoryLog(log);
+         const arry = [...JSON.parse(localStorage.getItem("history")), log];
+         localStorage.setItem("history", JSON.stringify(arry));
 
          // reset the form
          event.currentTarget.reset();
 
       })
    })
+
+
 })
 
