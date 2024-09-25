@@ -99,7 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
          alert(`You have donate ${donation} BDT successfully`)
 
          // create a history log:
-         document.querySelector("#no-log").remove();
+         if (document.querySelector("#no-log")) {
+
+            document.querySelector("#no-log").remove();
+         }
          const title = event.currentTarget.parentElement.parentElement.querySelector("h1").innerText;
          const time = new Date();
          const log = { title, time, amount: donation }

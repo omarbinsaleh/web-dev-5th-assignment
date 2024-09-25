@@ -24,7 +24,7 @@ function loadDonations(donationsArray) {
 function createHistoryLog(log) {
    const historyElement = document.createElement('div');
    historyElement.innerHTML = `
-      <div class="p-3 border border-gray-400 shadow-md rounded">
+      <div class="history-log p-3 border border-gray-400 shadow-md rounded">
          <h1 class="text-xl font-semibold">Donated ${log.amount} BDT to ${log.title}</h1>
          <p class="text-sm text-slate-400">${log.time}</p>
       </div>
