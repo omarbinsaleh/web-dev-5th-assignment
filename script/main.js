@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener("click", function () {
 
          // change the bg color
-         resetButtonColor();
+         
 
          // when the main balance button is clicked on:
          if(this.dataset.button === "btn-main-balance") {
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
          // when the the blog button is clicked on:
          if (this.dataset.button === "btn-blogs") {
+            resetButtonColor();
             this.classList.add("bg-green-400");
             const root = window.origin;
 
@@ -46,15 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
          // when the the donation button is clicked on:
          if (this.dataset.button === "btn-donation") {
+            resetButtonColor();
             this.classList.add("bg-green-400");
             
-            // window.open(`${window.origin}/web-dev-5th-assignment/`)
-            // show the donation section:
+            // show the donation sections:
             show("#donations-container");
          }
 
          // when the history button is clicked on:
          if (this.dataset.button === "btn-history") {
+            resetButtonColor();
             this.classList.add("bg-green-400");
 
             // show the history section:
@@ -102,9 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
          localStorage.setItem("balance", JSON.stringify(newBalance));
 
          // show the user a successfull message:
-         // alert(`You have donate ${donation} BDT successfully`)
-         showModal();
-
+         showModal(donation);
          document.querySelector("#hide-modal-1").addEventListener("click", function() {
             hideModal()
          })
