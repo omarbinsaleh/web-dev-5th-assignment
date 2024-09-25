@@ -7,6 +7,7 @@ function resetButtonColor() {
 // load the main balance:
 function loadMainBalance() {
    const balance = parseFloat(localStorage.getItem('balance'));
+   console.log(balance);
    document.querySelector("#main-balance").innerText = balance;
 }
 
