@@ -35,13 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("bg-green-400");
             const root = window.origin;
 
-            window.open(`${origin}/pages/blogs.html`)
+            window.open(`${root}/web-dev-5th-assignment/pages/blogs.html`)
          }
 
          // when the the donation button is clicked on:
          if (this.dataset.button === "btn-donation") {
             this.classList.add("bg-green-400");
-
+            
+            // window.open(`${window.origin}/web-dev-5th-assignment/`)
             // show the donation section:
             show("#donations-container");
          }
