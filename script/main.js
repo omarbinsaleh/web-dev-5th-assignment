@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
          // create a history log:
          if (document.querySelector("#no-log")) {
-
             document.querySelector("#no-log").remove();
          }
          const title = event.currentTarget.parentElement.parentElement.querySelector("h1").innerText;
