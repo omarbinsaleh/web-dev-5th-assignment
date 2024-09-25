@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
    }
 
    // load main Balance:
+   document.querySelector("#main-balance").innerText = localStorage.getItem("balance");
    loadMainBalance();
 
    // load the donations:
