@@ -33,12 +33,18 @@
                   <span class="text-xl font-bold">Donate Bangladesh</span>
                </div>
             </div>
-            <div class="text-lg flex flex-wrap items-center gap-2 font-bold text-slate-600">
-               <img class="w-7" src="./assets/coin.png" alt="">
-               <span id="main-balance">
-                  5500
-               </span>
-               BDT
+            <div class="">
+               <button class="btn cursor-pointer text-lg bg-transparent border border-gray-200 rounded py-2 px-4"
+                  data-button="btn-main-balance">
+                  <div class=" flex flex-wrap items-center gap-2 font-bold text-slate-600 ">
+                     <img class="w-7" src="../assets/coin.png" alt="">
+                     <span id="main-balance">
+                        5500
+                     </span>
+                     BDT
+                  </div>
+               </button>
+               <!--  -->
             </div>
          </nav>
       </section>
@@ -46,9 +52,9 @@
       <div class="w-full max-w-[1140px] mx-auto p-4 flex items-center justify-center gap-5 bg-white">
          <!-- blogs button -->
          <div class="sm:hidden">
-               <button id="btn-blogs" class="btn btn-active m-0 btn-blogs hover:bg-green-400 border border-slate-400"
-                  data-button="btn-blogs">Blogs
-               </button>
+            <button id="btn-blogs" class="btn btn-active m-0 btn-blogs hover:bg-green-400 border border-slate-400"
+               data-button="btn-blogs">Blogs
+            </button>
          </div>
          <!-- donation button -->
          <div class="">

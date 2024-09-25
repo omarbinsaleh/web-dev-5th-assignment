@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
          // change the bg color
          resetButtonColor();
 
+         // when the main balance button is clicked on:
+         if(this.dataset.button === "btn-main-balance") {
+            console.log(this);
+         }
+
          // when the the blog button is clicked on:
          if (this.dataset.button === "btn-blogs") {
             this.classList.add("bg-green-400");
