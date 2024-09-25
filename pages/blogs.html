@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogs</title>
+    <!-- tailwindcss CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyUI and tailwindcss CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- local css file -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- local js file -->
+    <script src="../script/main.js"></script>
+</head>
+
+<body class="w-screen h-screen flex flex-col">
+    <header class=" shadow-md sticky top-0 left-0 bg-white z-10">
+        <section class="bg-[#F9F7F3]">
+            <!-- nav bar -->
+            <nav class="w-full max-w-[1140px] mx-auto p-3 flex items-center justify-between gap-2">
+                <div class="hidden sm:block">
+                    <button id="nav-btn-blogs" class="btn btn-active m-0 border bg-green-400 border-slate-400"
+                        data-button="btn-blogs">Blogs
+                    </button>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <img class="w-10 aspect-square" src="../assets/logo.png" alt="">
+                        <span class="text-xl font-bold">Donate Bangladesh</span>
+                    </div>
+                </div>
+                <div class="text-lg flex flex-wrap items-center gap-2 font-bold text-slate-600">
+                    <img class="w-7" src="../assets/coin.png" alt="">
+                    <span id="main-balance">
+                        5500
+                    </span>
+                    BDT
+                </div>
+            </nav>
+        </section>
+        <!-- main buttons for navigation -->
+        <div class="w-full max-w-[1140px] mx-auto p-4 flex items-center justify-center gap-5 bg-white">
+            <!-- blogs button -->
+            <div class="sm:hidden">
+                <button id="btn-blogs" class="btn btn-active m-0 btn-blogs border border-slate-400"
+                    data-button="btn-blogs">Blogs
+                    </a>
+            </div>
+            <!-- donation button -->
+            <div class="">
+                <a href="../index.html">
+                    <button id="btn-donation" class="btn btn-active m-0 border border-slate-400"
+                        data-button="btn-donation">Donation
+                    </button>
+                </a>
+            </div>
+            <!-- history button -->
+            <div class="">
+                <a href="../index.html">
+                    <button id="btn-history" class="btn btn-active m-0 border border-slate-400"
+                        data-button="btn-history">History
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- main section -->
+    <main class="flex-1">
+        <section id="info-container" class="w-full max-w-[1140px] p-3 mx-auto">
+            <!-- blogs section -->
+            <section id="blogs-container" class="space-y-3 mt-6">
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+                    <div class="collapse-content">
+                        <p>The Document Object Model (DOM) is a programming interface for web documents. It represents
+                            the structure of a webpage as a tree of objects, where each node corresponds to a part of
+                            the document, such as elements, attributes, and text.</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+                    <div class="collapse-content">
+                        <p>Selecting an element from the DOM can be done using various methods in JavaScript. Here are
+                            some of the most common ways: getElementById(), getElementsByClassName(),
+                            getElementsByTagName(), querySelector(), querySelectorAll()</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM,
+                        and why is it useful?</div>
+                    <div class="collapse-content">
+                        <p>Event delegation is a JavaScript technique that uses event bubbling to manage events
+                            efficiently by attaching a single event listener to a parent element instead of multiple
+                            listeners to child elements. When an event occurs, it bubbles up to the parent, allowing the
+                            listener to handle it.
+
+                            This approach is useful because it improves performance by reducing the number of event
+                            listeners, automatically accommodates dynamically added child elements, and simplifies code
+                            maintenance. It is particularly effective in applications with many similar elements or
+                            frequently changing content, enhancing both efficiency and clarity in event management.</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes andstyles using the DOM?
+                    </div>
+                    <div class="collapse-content">
+                        <p>You can manipulate an element's attributes and styles using the DOM in JavaScript with the following methods:
+
+                            Attributes: Use setAttribute() to change an attribute and getAttribute() to retrieve it.
+                            Styles: Modify inline styles with the style property.
+
+                            These methods allow dynamic updates to an element's appearance and behavior on the webpage.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- donatin section -->
+            <section id="donations-container" class="space-y-7 hidden">
+                <!-- donation card 1 -->
+                <div class="grid sm:grid-cols-2 gap-6 p-2 rounded-md shadow-lg border border-gray-300">
+                    <div>
+                        <img class="w-full aspect-[3/2] rounded-md" src="../assets/noakhali.png" alt="">
+                    </div>
+                    <div class="space-y-1">
+                        <!-- collected donations -->
+                        <div>
+                            <button
+                                class="w-auto bg-gray-200 text-slate-600 font-bold py-2 px-4 flex items-center gap-2 rounded-md">
+                                <img class="w-5 aspect-square" src="../assets/coin.png" alt="">
+                                <span class="total-donations">0</span>
+                                BDT
+                            </button>
+                        </div>
+
+                        <h1 class="text-lg font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+                        <p class="text-collaps-4">
+                            The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
+                            donation
+                            will help provide essential supplies and to those affected by this disaster. Every
+                            contribution,
+                            big or small, makes difference. Please join us in supporting the relief efforts and making a
+                            positive impact on the lives of those in need.
+                        </p>
+                        <div class="bg-base-100 w-full shadow-lg py-3">
+                            <form class="">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Your Donation</span>
+                                    </label>
+                                    <input type="number" placeholder="Enter Donation Amount"
+                                        class="donation-amount input input-bordered" required />
+                                </div>
+                                <div class="form-control mt-6">
+                                    <button class="btn btn-active hover:bg-green-300 focus:bg-green-400">Donate
+                                        Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- donation card 2 -->
+                <div class="grid sm:grid-cols-2 gap-6 p-2 rounded-md shadow-lg border border-gray-300">
+                    <div>
+                        <img class="w-full aspect-[3/2] rounded-md" src="../assets/feni.png" alt="">
+                    </div>
+                    <div class="space-y-1">
+                        <!-- collected donations -->
+                        <div>
+                            <button
+                                class="w-auto bg-gray-200 text-slate-600 font-bold py-2 px-4 flex items-center gap-2 rounded-md">
+                                <img class="w-5 aspect-square" src="../assets/coin.png" alt="">
+                                <span class="total-donations">0</span>
+                                BDT
+                            </button>
+                        </div>
+
+                        <h1 class="text-lg font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
+                        <p class="text-collaps-4">
+                            The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
+                            donation
+                            will help provide essential supplies and to those affected by this disaster. Every
+                            contribution,
+                            big or small, makes difference. Please join us in supporting the relief efforts and making a
+                            positive impact on the lives of those in need.
+                        </p>
+                        <div class="bg-base-100 w-full shadow-lg py-3">
+                            <form class="">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Your Donation</span>
+                                    </label>
+                                    <input type="number" placeholder="Enter Donation Amount"
+                                        class="donation-amount input input-bordered" required />
+                                </div>
+                                <div class="form-control mt-6">
+                                    <button class="btn btn-active hover:bg-green-300 focus:bg-green-400">Donate
+                                        Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- donation card 3 -->
+                <div class="grid sm:grid-cols-2 gap-6 p-2 rounded-md shadow-lg border border-gray-300">
+                    <div>
+                        <img class="w-full aspect-[3/2] rounded-md" src="../assets/quota-protest.png" alt="">
+                    </div>
+                    <div class="space-y-1">
+                        <!-- collected donations -->
+                        <div>
+                            <button
+                                class="w-auto bg-gray-200 text-slate-600 font-bold py-2 px-4 flex items-center gap-2 rounded-md">
+                                <img class="w-5 aspect-square" src="../assets/coin.png" alt="">
+                                <span class="total-donations">0</span>
+                                BDT
+                            </button>
+                        </div>
+
+                        <h1 class="text-lg font-bold">Aid for Injured in the Quota Movement</h1>
+                        <p class="text-collaps-4">
+                            The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
+                            donation
+                            will help provide essential supplies and to those affected by this disaster. Every
+                            contribution,
+                            big or small, makes difference. Please join us in supporting the relief efforts and making a
+                            positive impact on the lives of those in need.
+                        </p>
+                        <div class="bg-base-100 w-full shadow-lg py-3">
+                            <form class="">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Your Donation</span>
+                                    </label>
+                                    <input type="number" placeholder="Enter Donation Amount"
+                                        class="donation-amount input input-bordered" required />
+                                </div>
+                                <div class="form-control mt-6">
+                                    <button class="btn btn-active hover:bg-green-300 focus:bg-green-400">Donate
+                                        Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- history section -->
+            <section id="history-container" class="hidden">
+
+            </section>
+        </section>
+    </main>
+
+    <!-- foote section -->
+    <footer class="p-3 bg-[#F9F7F3] h-16">
+
+    </footer>
+    <script src="../script/utilities.js"></script>
+</body>
+
+</html>
