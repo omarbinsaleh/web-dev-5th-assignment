@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
    console.log(historyLog);
    const donationsArray = JSON.parse(localStorage.getItem("donations")) || localStorage.setItem("donations", JSON.stringify([0, 0, 0]))
 
+   console.log(balance);
    if (historyLog.length <= 0) {
       document.querySelector("#history-container").innerHTML = `
          <div id='no-log' class="text-xl font-semibold text-slate-400 text-center">No History log recorded..</div>
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
    }
 
    // load main Balance:
-   loadMainBalance(balance);
+   loadMainBalance();
 
    // load the donations:
    loadDonations(donationsArray);
