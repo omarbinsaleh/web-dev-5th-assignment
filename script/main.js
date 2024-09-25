@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("#no-log").remove();
          }
          const title = event.currentTarget.parentElement.parentElement.querySelector("h1").innerText;
-         const time = new Date();
+         const time = String(new Date());
          const log = { title, time, amount: donation }
          createHistoryLog(log);
          const arry = [...JSON.parse(localStorage.getItem("history")), log];
