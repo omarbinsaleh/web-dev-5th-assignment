@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
    // load main Balance:
    document.querySelector("#main-balance").innerText = localStorage.getItem("balance");
-   if (this.document.querySelector("#blog-main-balance")) {
+   if (document.querySelector("#blog-main-balance")) {
       document.querySelector("#blog-main-balance").innerText = localStorage.getItem("balance");
    }
    loadMainBalance();
