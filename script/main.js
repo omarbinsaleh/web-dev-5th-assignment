@@ -102,7 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
          localStorage.setItem("balance", JSON.stringify(newBalance));
 
          // show the user a successfull message:
-         alert(`You have donate ${donation} BDT successfully`)
+         // alert(`You have donate ${donation} BDT successfully`)
+         showModal();
+
+         document.querySelector("#hide-modal-1").addEventListener("click", function() {
+            hideModal()
+         })
 
          // create a history log:
          if (document.querySelector("#no-log")) {
