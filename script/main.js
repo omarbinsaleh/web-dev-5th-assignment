@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
    // get the main balance:
-   const balance = parseFloat(localStorage.getItem("balance")) || localStorage.setItem("balance", JSON.stringify(0));
+   const balance = parseFloat(localStorage.getItem("balance")) || localStorage.setItem("balance", JSON.stringify(6500));
    const historyLog = JSON.parse(localStorage.getItem("history")) || localStorage.setItem("history", JSON.stringify([]))
    console.log(historyLog);
    const donationsArray = JSON.parse(localStorage.getItem("donations")) || localStorage.setItem("donations", JSON.stringify([0, 0, 0]))
